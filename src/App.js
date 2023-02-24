@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import ParticlesBg from "particles-bg";
-
 import FaceRecognition from "./components/FaceRecognition/FaceRecognition";
 import Navigation from "./components/Navigation/Navigation";
 import Signin from "./components/Signin/Signin";
@@ -9,8 +8,6 @@ import Logo from "./components/Logo/Logo";
 import ImageLinkForm from "./components/ImageLinkForm/ImageLinkForm";
 import Rank from "./components/Rank/Rank";
 import "./App.css";
-
-
 
 const initialState = {
   input: "",
@@ -50,7 +47,11 @@ class App extends Component {
       data.outputs[0].data.regions[0].region_info.bounding_box;
     const image = document.getElementById("inputimage");
     const width = Number(image.width);
+    console.log(`🚀 ~ file: App.js:53 ~ App ~ width:`, width);
+
     const height = Number(image.height);
+    console.log(`🚀 ~ file: App.js:56 ~ App ~ heigh:`, height);
+
     return {
       leftCol: clarifaiFace.left_col * width,
       topRow: clarifaiFace.top_row * height,
@@ -69,14 +70,14 @@ class App extends Component {
 
   onButtonSubmit = () => {
     this.setState({ imageUrl: this.state.input });
-      fetch("http://localhost:3000/imageurl", {
-        method: "post",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          input: this.state.input,
-        }),
-      })
-      .then(response => response.json())
+    fetch("http://localhost:3000/imageurl", {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        input: this.state.input,
+      }),
+    })
+      .then((response) => response.json())
       .then((response) => {
         console.log("hi", response);
         if (response) {

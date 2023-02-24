@@ -1,4 +1,11 @@
 {
   "marquee.widgets.npm-stats.packageNames": ["smart-brain-1"],
-  "cSpell.words": ["Clarifai", "Hummie", "signin", "signout", "webfonts"]
+  "cSpell.words": [
+    "Clarifai",
+    "Hummie",
+    "inputimage",
+    "signin",
+    "signout",
+    "webfonts"
+  ]
 }
