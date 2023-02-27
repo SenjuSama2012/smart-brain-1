@@ -67,7 +67,7 @@ class App extends Component {
 
   onButtonSubmit = () => {
     this.setState({ imageUrl: this.state.input });
-    fetch("smart-brain-api-production-fa1c.up.railway.app/imageurl", {
+    fetch("smart-brain-api-production-2a5d.up.railway.app/imageurl", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -78,7 +78,7 @@ class App extends Component {
       .then((response) => {
         console.log("hi", response);
         if (response) {
-          fetch("smart-brain-api-production-fa1c.up.railway.app/image", {
+          fetch("smart-brain-api-production-2a5d.up.railway.app/image", {
             method: "put",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({

@@ -23,7 +23,7 @@ class Register extends React.Component {
   }
 
   onSubmitSignIn = () => {
-    fetch('smart-brain-api-production-fa1c.up.railway.app/register', {
+    fetch('smart-brain-api-production-2a5d.up.railway.app/register', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
