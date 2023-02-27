@@ -45,15 +45,15 @@ class App extends Component {
   calculateFaceLocation = (data) => {
     const clarifaiFace =
       data.outputs[0].data.regions[0].region_info.bounding_box;
-    const image = document.getElementById('inputimage');
+    const image = document.getElementById("inputimage");
     const width = Number(image.width);
     const height = Number(image.height);
 
     return {
       leftCol: clarifaiFace.left_col * width,
       topRow: clarifaiFace.top_row * height,
-      rightCol: width - (clarifaiFace.right_col * width),
-      bottomRow: height - (clarifaiFace.bottom_row * height),
+      rightCol: width - clarifaiFace.right_col * width,
+      bottomRow: height - clarifaiFace.bottom_row * height,
     };
   };
 
@@ -96,12 +96,12 @@ class App extends Component {
   };
 
   onRouteChange = (route) => {
-    if (route === 'signout') {
-      this.setState({isSignedIn: false})
-    } else if (route === 'home') {
-      this.setState({isSignedIn: true})
+    if (route === "signout") {
+      this.setState({ isSignedIn: false });
+    } else if (route === "home") {
+      this.setState({ isSignedIn: true });
     }
-    this.setState({route: route});
+    this.setState({ route: route });
   };
 
   render() {
